@@ -3,7 +3,9 @@ package com.perso.parking.services.impl;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -53,7 +55,7 @@ public class ParkingServiceImpl implements ParkingService {
 
 	private String getLibelleStatut(RecordEntity record) {
 		
-		switch(record.getFields().getGrpStatut()) {
+		/*switch(record.getFields().getGrpStatut()) {
 			case "1" : {
 				return "FERME";
 			}
@@ -64,14 +66,13 @@ public class ParkingServiceImpl implements ParkingService {
 				return "OUVERT";
 			}
 		}
-		return "Données non disponibles";
+		return "Données non disponibles";*/
 			
-		//Autre façon de faire
-		/*Map<String, String> libelles = new HashMap<>();
+		Map<String, String> libelles = new HashMap<>();
 		libelles.put("1", "FERME");
 		libelles.put("2", "ABONNES");
 		libelles.put("5", "OUVERT");
 		
-		return libelles.getOrDefault(record.getFields().getGrpStatut(), "Données non disponibles");*/
+		return libelles.getOrDefault(record.getFields().getGrpStatut(), "Données non disponibles");
 	}
 }
