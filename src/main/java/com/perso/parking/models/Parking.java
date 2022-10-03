@@ -2,12 +2,19 @@ package com.perso.parking.models;
 
 public class Parking {
 
+	private int identifiant;
 	private String nom;
 	private Integer nbPlacesDispo;
 	private Integer nbPlaceTotal;
 	private String statut;
 	private String heureMaj;
 	
+	public int getIdentifiant() {
+		return identifiant;
+	}
+	public void setIdentifiant(int identifiant) {
+		this.identifiant = identifiant;
+	}
 	public String getNom() {
 		return nom;
 	}
@@ -38,5 +45,4 @@ public class Parking {
 	public void setHeureMaj(String heureMaj) {
 		this.heureMaj = heureMaj;
 	}
-	
 }
